@@ -1,0 +1,23 @@
+{
+  "name": "rtl_433",
+  "version": "1.0.0",
+  "slug": "rtl_433",
+  "description": "Decode radio transmissions from devices via an SDR dongle and rtl_433",
+  "url": "https://github.com/myhomeiot/hassio-addons/tree/main/rtl_433",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "services": ["mqtt:want"],
+  "usb": true,
+  "udev": true,
+  "options": {
+    "use_core_mqtt_addon": true,
+    "core_mqtt_retain": true
+  },
+  "schema": {
+    "args": "str?",
+    "use_core_mqtt_addon": "bool",
+    "core_mqtt_extra": "str?",
+    "core_mqtt_retain": "bool"
+  }
+}
