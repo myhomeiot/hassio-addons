@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 
 ARGS="-c /rtl_433.conf"
 if ! bashio::config.is_empty 'args'; then
@@ -19,5 +19,5 @@ if bashio::config.true 'use_core_mqtt_addon'; then
   fi
 fi
 
-bashio::log.info "Starting /rtl_433 ${ARGS}"
+bashio::log.info "Starting /rtl_433 $(echo ${ARGS} | sed -E 's/(user=|pass=)\w*/\1*/g')"
 /rtl_433 ${ARGS}

@@ -7,9 +7,9 @@
 Example add-on configuration:
 
 ```yaml
-args: '-f 868M -R 172 -R 173 -M utc'
+args: '-f 868.3M -R 172 -R 173 -M time:tz'
 use_core_mqtt_addon: true
-core_mqtt_extra: devices=rtl_433[/id]
+core_mqtt_extra: events=rtl_433[/id]
 core_mqtt_retain: true
 ```
 
